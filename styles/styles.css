@@ -1,0 +1,273 @@
+*{
+    margin:0;
+    list-style: none;
+    color: black;
+    text-decoration: none;
+}
+body{
+    font-family: IntroW03;
+
+}
+
+@font-face {
+    font-family: IntroW03;
+    src: url(../Fonts/Intro\ W03\ Black.woff2);
+}
+
+#home{
+    display:block;
+}
+
+.wrapper{
+    margin: 0 auto;
+    max-width: 1232px;
+}
+#home .main{
+    background: url(../images/spotlight.avif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 110vh;
+    width: 100%;
+    position: relative;
+}
+#home .main .wrapper{
+    display: block;
+}
+#home .main .wrapper header{
+    display: flex;
+    align-items: center;
+    padding: 7px 0px;
+    justify-content: space-between;
+}
+
+#home .main .wrapper header h1{
+    width: 55px;
+    height: 55px;
+}
+#home .main .wrapper header h1 a{
+   
+}
+#home .main .wrapper header h1 a img{
+    width: 100%;
+    height: 100%;
+}
+#home .main .wrapper header nav{
+    width: 76%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#home .main header nav .left{
+    display: flex;
+    align-items: center;
+}
+#home .main .wrapper header nav .left ul{
+    display: flex;
+    align-items: center;
+}
+#home .main .wrapper header nav .left ul li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#home .main .wrapper header nav .left ul li a{
+    text-decoration: none;
+    color: #ffffff;
+    text-transform: uppercase;
+    padding: 27px 30px ;
+    font-size: 14px;
+    line-height: 18px;
+    text-wrap: nowrap;
+}
+#home .main .wrapper header nav .right{
+
+}
+#home .main .wrapper header nav .right button{
+    background-color: transparent;
+    border: none;
+}
+#home .main .wrapper header nav .right button i{
+    color: #ffffff;
+    font-size: 19px;
+    font-weight: lighter;
+}
+#home .main .wrapper #spotlight{
+
+}
+#home .main .wrapper #spotlight button{
+    position: absolute;
+    bottom: 20px;
+    right: 49%;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+#home .main .wrapper #spotlight button i{
+    color: #ffffff;
+    font-size: 25px;
+   
+}
+#home .main .wrapper #spotlight a{
+    color: #ffffff;
+    position: absolute;
+    border: 2px solid #ffffff;
+    font-size: 14px;
+    text-transform: uppercase;
+    border-radius: 30px;
+    padding: 10px 39px;
+    bottom: 20px;
+    right: 21%;
+}
+#home #newin {
+    
+}
+#home #newin .wrapper{
+    
+}
+#home #newin .wrapper .top{
+
+}
+#home #newin .wrapper .top h2{
+
+}
+#home #newin .wrapper .top h2 span{
+
+}
+#home #newin .wrapper .top h2 a{
+
+}
+#home #newin .wrapper .bottom{
+
+}
+#home #newin .wrapper .bottom{
+
+}
+#home #newin .wrapper .bottom ul{
+
+}
+#home #newin .wrapper .bottom ul li{
+
+}
+#home #newin .wrapper .bottom ul li a{
+
+}
+#home #newin .wrapper .bottom ul li a .container{
+
+}
+#home #newin .wrapper .bottom ul li a .container h3{
+
+}
+#home #newin .wrapper .bottom ul li a .container h3 span{
+
+}
+#home #newin .wrapper .bottom ul li a .container h6{
+
+}
+#home #newin .wrapper .bottom ul li a .container button{
+    background-color: transparent;
+}
+#home footer{
+    background-color: #09357a;
+    padding: 62px 0px;
+}
+#home footer .wrapper {
+
+}
+#home footer .wrapper .top{
+    display: flex;
+}
+#home footer .wrapper .top .items{
+
+}
+#home footer .wrapper .top .items h3{
+    font-size: 14px;
+    color: #e5eefd;
+    text-transform: uppercase;
+}
+#home footer .wrapper .top .items ul{
+    width: 100%;
+    padding: 0;
+}
+#home footer .wrapper .top .items ul li{
+    width: 25%;
+}
+#home footer .wrapper .top .items ul li a{
+    font-size: 14px;
+    text-transform: capitalize;
+    color: #e5eefd;
+    font-weight: lighter;
+}
+#home footer .wrapper .top .items ul li a small{
+    color: #ffffff;
+    font-weight: lighter;
+}
+#home footer .wrapper .top .social{
+    width: 25%;
+
+}
+#home footer .wrapper .top .social ul{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+#home footer .wrapper .top .social ul li {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#home footer .wrapper .top .social ul li a{
+
+}
+#home footer .wrapper .top .social ul li a i{
+    color: #09357a ;
+}
+#home footer .wrapper .mid{
+
+}
+#home footer .wrapper .mid .items{
+
+}
+#home footer .wrapper .mid .items ul{
+
+}
+#home footer .wrapper .mid .items ul li{
+
+}
+#home footer .wrapper .mid .items ul li a{
+
+}
+#home footer .wrapper .bottom{
+
+}
+#home footer .wrapper .bottom .country{
+
+}
+#home footer .wrapper .bottom  .country .flagcontainer{
+
+}
+#home footer .wrapper .bottom .country .flagcontainer{
+
+}
+#home footer .wrapper .bottom .country .flagcontainer img{
+
+}
+#home footer .wrapper .bottom .country p{
+
+}
+#home footer .wrapper .bottom .footerlist{
+
+}
+#home footer .wrapper .bottom .footerlist ul{
+
+}
+#home footer .wrapper .bottom .footerlist ul li{
+
+}
+#home footer .wrapper .bottom .footerlist ul li a{
+
+}
