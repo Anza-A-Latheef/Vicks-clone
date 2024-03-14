@@ -34,18 +34,75 @@
                                 </ul>
                             </div>
                             <div class="right">
-                                <button title="Search-Icon"><i class="fa fa-search"></i></button>
+                                <button title="Search-Icon"><i class="fa fa-search search"></i></button>
                             </div>
                         </nav>
                     </section>
                 </div>
+                <!-- responsive header -->
+                <div class="header-responsive">
+                    <section class="wrapper">
+                        <div class="bar-icon">
+                            <button id="open-menu"><i class="fa fa-bars" title="HAMBURGER ICON"></i></button>
+                        </div>
+                        <h1 class="left">
+                            <a href="#" title="Vicks - logo">
+                                <img src="../images\Vicks-Logo.avif" alt="Vicks-logo"/>
+                            </a>
+                        </h1>
+                        <div class="right">
+                            <button title="Search-Icon"><i class="fa fa-search"></i></button>
+                        </div>
+                    </section>
+                </div>
             </header>
+            <!-- hamburger open menu -->
+            <div class="responsive-menu" id="responsive-menu">
+                <header >
+                    <div class="header-responsive">
+                        <section class="wrapper">
+                            <div class="bar-icon">
+                                <button id="close-menu"><i class="fa fa-close" title="CLOSE ICON"></i></button>
+                            </div>
+                            <h1 class="left">
+                                <a href="#" title="Vicks - logo">
+                                    <img src="../images\Vicks-Logo.avif" alt="Vicks-logo"/>
+                                </a>
+                            </h1>
+                            <div class="right">
+                                <button><i class="fa fa-search"title="Search-Icon"></i></button>
+                            </div>
+                        </section>
+                    </div>
+                </header>
+                <div class="menu">
+                    <div class="itemhead">
+                        <h3 title="OUR PRODUCTS">our products</h3>
+                        <span>+</span>
+                    </div>
+                    <div class="itemhead">
+                        <h3 title="TREATMENTS & TIPS">treatments & tips</h3>
+                        <span>+</span>
+                    </div>
+                    <div class="itemhead">
+                        <h3 title="FAQS">faqs</h3>
+                        <span>+</span>
+                    </div>
+                    <div class="itemhead">
+                        <h3 title="OUR STORY">our story</h3>
+                        <span>+</span>
+                    </div>
+                </div>
+            </div>
             <section class="wrapper">
                 <section id="spotlight">
                     <button><i class="fa fa-angle-down"></i></button>
                     <a href="#">Learn more</a>
                 </section>
             </section>
+        </section>
+        <section class="responsive-btn">
+            <a href="#" class="learnmore" id="learnmore">Learn more</a>
         </section>
         <!-- Main section ends -->
         <!-- Newin Section starts -->
@@ -221,25 +278,47 @@
     <!-- script area starts-->
         <script>
             //style changes on scroll
-            window.addEventListener('scroll', function () {
-            var header = document.querySelector('header')
-            var navLinks = document.getElementsByClassName('navheads')
+            window.addEventListener('scroll', function() {
+    var header = document.querySelector('header');
+    var navLink = document.querySelectorAll('#home #main header .header-cont .wrapper nav .left ul li a');
+    var searchIcon = document.querySelector('#home #main header .header-cont .wrapper nav .right button i');
 
-            if (window.scrollY > 0) {
-            header.classList.remove('remove-scroll-background')
-            header.classList.add('scroll-background')
-            for (var i = 0; i < navLinks.length; i++) {
-                navLinks[i].style.color = '#09357a'
-            }
-            } else {
-            header.classList.add('remove-scroll-background')
-            header.classList.remove('scroll-background')
-            for (var i = 0; i < navLinks.length; i++) {
-                navLinks[i].style.color = '#ffffff'
-            }
-            }
-        })
+    // var searchicon=document.querySelector('#home #main header .header-responsive .wrapper .right button');
+    // var hamsberg=document.querySelector('#home #main header .header-responsive .wrapper .bar-icon button');
 
+    if (window.scrollY > 0) {
+        header.classList.add('scroll-background-white');
+        searchIcon.style.color = "#09357a";
+        // searchicon.style.color="#09357a";
+        // hamsberg.style.color="#09357a";
+        navLink.forEach(function(element) {
+            element.classList.remove('navheads');
+            element.classList.add('navhover');
+            element.addEventListener('mouseenter', function() {
+                searchIcon.style.color = "#09357a"; 
+            });
+            element.addEventListener('mouseleave', function() {
+                searchIcon.style.color = "#ffffff"; 
+            });
+        });
+    } else {
+        header.classList.remove('scroll-background-white');
+        searchIcon.style.color = "#ffffff"; 
+        // searchicon.style.color="#ffffff";
+        // hamsberg.style.color="#ffffff";
+        navLink.forEach(function(element) {
+            element.classList.add('navheads');
+            element.classList.remove('navhover');
+            element.removeEventListener('mouseenter', function() {
+                searchIcon.style.color = "#09357a"; 
+            });
+            element.removeEventListener('mouseleave', function() {
+                searchIcon.style.color = "#ffffff"; 
+            });
+        });
+    }
+});
+        
         //toggle footer on responsive point 980 
 
         document.addEventListener('DOMContentLoaded', function() {
@@ -250,6 +329,9 @@
                 });
             });
         });
+
+        //open menu on responsive
+        const toggleButton =document.getElementById('open-menu')
 
         </script>
     <!-- script area ends -->

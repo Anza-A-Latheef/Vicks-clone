@@ -21,33 +21,42 @@ body{
 }
 /* Background color of header and color of nav-tags changes on scrolling*/
 .scroll-background {
-    background-color: #ffffff;
-}
-.remove-scroll-background{
     background-color: transparent;
 }
-
+.navhover {
+    color:#09357a;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 24px 30px ;
+    font-size: 14px;
+    line-height: 18px;
+    text-wrap: nowrap;
+}
+.icon-color{
+    color: #09357a;
+}
+.scroll-background-white {
+    background-color: #ffffff;
+ }
 /* main section style starts here */
 #home #main{
     background: url('../images/spotlight.avif') center/cover no-repeat; 
     height: 100vh;
+    background-size: 100% 100%;
     position: relative;
-    width: 100%;
-}
-#home #main .wrapper{
-    display: block;
 }
 #home #main header{
     pointer-events: none;
     position: fixed;
     right: 0;
     left: 0;
+    top: 0;
 }
 #home #main header:hover{
    background: #ffffff;
 }
 #home #main header .header-cont{
-    background-color: transparent;     
+    background-color: transparent;    
 }
 #home #main header .header-cont .wrapper{
     display: flex;
@@ -68,10 +77,19 @@ body{
     align-items: center;
     justify-content: space-between;
 }
+#home #main header .header-cont .wrapper nav:hover .right  button i{
+    color: #09357a;
+}
 #home #main header .header-cont .wrapper nav .left{
     pointer-events: auto;
     display: flex;
     align-items: center;
+}
+#home #main header .header-cont .wrapper nav .left:hover a{
+    color: #09357a;
+}
+#home #main header .header-cont .wrapper nav .left:hover .navheads{
+    color: #09357a;
 }
 #home #main header .header-cont .wrapper nav .left ul{
     display: flex;
@@ -89,13 +107,7 @@ body{
 #home #main header .header-cont .wrapper nav .left ul li:hover a{
     color:#09357a;
 }
-#home #main header .header-cont .wrapper nav .left:hover a{
-    color: #09357a;
-}
-#home #main header .header-cont .wrapper nav:hover .right  button i{
-    color: #09357a;
-}
-#home #main header .header-cont .wrapper nav .left ul li a{
+#home #main header .header-cont .wrapper nav .left ul li .navheads{
     text-decoration: none;
     color: #ffffff;
     text-transform: uppercase;
@@ -107,13 +119,138 @@ body{
 #home #main header .header-cont .wrapper nav .right button{
     background-color: transparent;
     border: none;
+    color: #ffffff;
 }
 #home #main header .header-cont .wrapper nav .right button i{
+    font-size: 19px;
+    font-weight: lighter;
+    cursor: pointer;
+}
+/* resposive header styling */
+#home #main header .header-responsive{
+    z-index: 12;
+    background-color: transparent;  
+    display: none; 
+}
+#home #main header .header-responsive .wrapper{
+    display: flex;
+    width: 90%;
+    align-items: center;
+    justify-content: space-between;
+}
+#home #main header .header-responsive .wrapper .bar-icon button{
+    background-color: transparent;
+    border: none;
+    color: #ffffff;
+}
+#home #main header .header-responsive .wrapper .bar-icon button i{
+    font-size: 26px;
+}
+#home #main header .header-responsive .wrapper h1{
+    width: 55px;
+    height: 55px;
+}
+#home #main header .header-responsive .wrapper h1 a img{
+    width: 100%;
+    height: 100%;
+}
+#home #main header .header-responsive .wrapper .right button{
+    background-color: transparent;
+    border: none;
+}
+#home #main header .header-responsive .wrapper .right button i{
     color: #ffffff;
     font-size: 19px;
     font-weight: lighter;
     cursor: pointer;
 }
+/* RESPONSIVE MENUBAR STYLING */
+    #main #responsive-menu{
+        display: none;
+        position: fixed;
+        top: 20px;
+        left: 0;
+        z-index: 12;
+        /* display: flex; */
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background-color: #ffffff;
+        height: 100vh;
+    }
+    #main #responsive-menu header{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    #home #main #responsive-menu header .header-responsive{
+        background-color: white;  
+        display: flex; 
+        padding: 10px 0px;
+    }
+    #home #main #responsive-menu header .header-responsive .wrapper{
+        display: flex;
+        width: 90%;
+        align-items: center;
+        justify-content: space-between;
+    }
+    #home #main #responsive-menu header .header-responsive .wrapper .bar-icon button{
+        background-color: transparent;
+        border: none;
+        color: #09357a;
+    }
+    #home #main #responsive-menu header .header-responsive .wrapper .bar-icon button i{
+        font-size: 26px;
+    }
+    #home #main #responsive-menu header .header-responsive .wrapper h1{
+        width: 55px;
+        height: 55px;
+    }
+    #home #main #responsive-menu header .header-responsive .wrapper h1 a img{
+        width: 100%;
+        height: 100%;
+    }
+    #home #main #responsive-menu header .header-responsive .wrapper .right button{
+        background-color: transparent;
+        border: none;
+    }
+    #home #main #responsive-menu header .header-responsive .wrapper .right button i{
+        color: #09357a;
+        font-size: 19px;
+        font-weight: lighter;
+        cursor: pointer;
+    }
+
+    #main #responsive-menu .menu{
+        margin:0px 60px;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        width: 90%;
+        padding: 100px 0px;
+    }
+    #main #responsive-menu .menu .itemhead{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width:100%;
+    }
+    #main #responsive-menu .menu .itemhead h3{
+        cursor:pointer;
+        font-size: 18px;
+        letter-spacing: 0.01em;
+        color: #09357a;
+        text-transform: uppercase;
+        line-height: 50px;
+        text-align: left;
+    }
+    #main #responsive-menu .menu .itemhead span {
+        font-size: 35px;
+        color: #09357a;
+        line-height: 60px;
+        font-weight: lighter;
+        font-family: sans-serif;
+    }
 /* spotlight styling starts */
 #home #main .wrapper #spotlight button{
     position: absolute;
@@ -126,7 +263,7 @@ body{
 #home #main .wrapper #spotlight button i{
     color: #ffffff;
     font-size: 26px;
-   cursor: pointer;
+    cursor: pointer;
 }
 #home #main .wrapper #spotlight a{
     color: #ffffff;
@@ -139,6 +276,21 @@ body{
     bottom: 20px;
     right: 20%;
 }
+.responsive-btn{
+    display: none;
+    justify-content: center;
+    margin-top: 20px;
+}
+#learnmore{
+    color: #09357a;
+    border: 2px solid #09357a;
+    font-size:   14px;
+    width: fit-content;
+    text-transform: uppercase;
+    border-radius: 30px;
+    padding: 11px 39px;
+}
+
 #home #main .wrapper #spotlight a:hover{
     color: #09357a;
 }
@@ -547,6 +699,14 @@ body{
 
 }
 @media all and (max-width:1080px){
+    #home #main header .header-cont{
+        background-color: transparent;  
+        display: none;  
+    }
+    #home #main header .header-responsive{
+        background-color: transparent;  
+        display: flex; 
+    }
     #home #newin .wrapper .top{
         margin: 0px 70px;
     }
@@ -613,6 +773,9 @@ body{
 
 
 @media all and (max-width:980px){
+    #home #main header .header-responsive .wrapper{
+        width: 80%;
+    }
     #home #newin .wrapper .top{
         margin: 0px 125px;
     }
@@ -713,7 +876,6 @@ body{
 }
 
 
-
 @media all and (max-width:768px){
     #home #newin .wrapper .top{
         margin: 0px 20px;
@@ -728,6 +890,30 @@ body{
 
 
 @media all and (max-width:640px){
+    #home #main{
+        background: url('../images/responsive-banner.webp') center/cover no-repeat; 
+        min-height: 1080px;
+        background-size: 100% 100%;
+    }
+    #home #main header .header-responsive .wrapper .bar-icon button i{
+        font-size: 24px;
+    }
+    #home #main header .header-responsive .wrapper h1{
+        width: 45px;
+        height: 45px;
+    }
+    #home #main header .header-responsive .wrapper .right button i{
+        font-size: 17px;
+    }
+    #home #main .wrapper #spotlight button{
+        display: none;
+    }
+    #home #main .wrapper #spotlight a{
+        display: none;
+    }
+    .responsive-btn{
+        display: flex;
+    }
     #home #newin .wrapper .top h2{
         font-size: 24px;
     }
@@ -763,7 +949,9 @@ body{
 
 
 @media all and (max-width:540px){
-
+    #home #main{
+        min-height: 950px;
+    }
 }
 
 
@@ -774,7 +962,22 @@ body{
 }
 
 @media all and (max-width:360px){
-    
+    #home #main{
+        min-height: 750px;
+    }
+    #home #main header .header-responsive .wrapper .bar-icon button i{
+        font-size: 20px;
+    }
+    #home #main header .header-responsive .wrapper h1{
+        width: 35px;
+        height: 35px;
+    }
+    #home #main header .header-responsive .wrapper .right button i{
+        font-size: 14px;
+    }
+    #home #newin .wrapper .bottom ul li{
+        min-height: 510px;
+    }
 }
 @media all and (max-width:320px){
 
