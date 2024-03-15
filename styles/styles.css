@@ -1,16 +1,19 @@
+/* Resetting */
 *{
     margin:0;
     padding: 0;
+    box-sizing: border-box;
     list-style: none;
     text-decoration: none;
-}
-body{
-    font-family: IntroW03, sans-serif;
 }
 /* font imported */
 @font-face {
     font-family: IntroW03;
     src: url('../Fonts/Intro W03 Black.woff2') format('woff2');
+}
+/* Global styles */
+body{
+    font-family: IntroW03, sans-serif;
 }
 #home{
     display:block;
@@ -38,6 +41,7 @@ body{
 .scroll-background-white {
     background-color: #ffffff;
  }
+
 /* main section style starts here */
 #home #main{
     background: url('../images/spotlight.avif') center/cover no-repeat; 
@@ -46,14 +50,21 @@ body{
     position: relative;
 }
 #home #main header{
-    pointer-events: none;
     position: fixed;
+    z-index: 11;
     right: 0;
     left: 0;
     top: 0;
+    transition: background-color 0.3s ease;
 }
+
 #home #main header:hover{
    background: #ffffff;
+}
+#home #main header:hover nav:hover .right button i,
+#home #main header:hover .header-cont .wrapper nav .left ul li .navheads,
+#home #main header:hover .header-cont .wrapper nav .right button {
+    color: #09357a;
 }
 #home #main header .header-cont{
     background-color: transparent;    
@@ -139,6 +150,7 @@ body{
     justify-content: space-between;
 }
 #home #main header .header-responsive .wrapper .bar-icon button{
+    transition: transform 0.3s ease-in-out;
     background-color: transparent;
     border: none;
     color: #ffffff;
@@ -171,12 +183,11 @@ body{
         top: 20px;
         left: 0;
         z-index: 12;
-        /* display: flex; */
-        flex-direction: column;
         align-items: center;
-        width: 100%;
         background-color: #ffffff;
         height: 100vh;
+        flex-direction: column;
+        width: 100%;
     }
     #main #responsive-menu header{
         display: flex;
@@ -341,6 +352,13 @@ body{
     width: 32.5%;
     border-radius: 5px;
     cursor: pointer;
+    transition: transform .3s;
+}
+#home #newin .wrapper .bottom ul li:hover{
+    transform: scale(1.01);
+}
+#home #newin .wrapper .bottom ul li a:hover .hover-element .hover-container .show{
+    display: flex;
 }
 
 #home #newin .wrapper .bottom ul li.bg-one{
@@ -360,6 +378,11 @@ body{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+#home #newin .wrapper .bottom ul li a{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 #home #newin .wrapper .bottom ul li a .container{
     display: flex;
@@ -422,6 +445,35 @@ body{
     color: #09357a;
     background-color: #ffffff;
     border: 2px solid #ffffff;
+}
+#home #newin .wrapper .bottom ul li a .hover-element{
+    width: fit-content;
+    height: min-content;
+    margin: 10px;
+}
+#home #newin .wrapper .bottom ul li a .hover-element .hover-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+#home #newin .wrapper .bottom ul li a .hover-element .hover-container button{
+    border: 1px solid #e5eefd;
+    display: none;
+    background-color: white;
+    padding: 11px;
+    opacity: 0.5;
+    border-radius: 100%;
+    cursor: pointer;
+}
+#home #newin .wrapper .bottom ul li a .hover-element .hover-container button:hover{
+    opacity: 1;
+}
+#home #newin .wrapper .bottom ul li a .hover-element .hover-container:hover button{
+    display: flex;
+}
+#home #newin .wrapper .bottom ul li a .hover-element .hover-container button i{
+   color: #264d89;
 }
 /* newsin section styles end */
 /* footer style starts */
@@ -692,12 +744,7 @@ body{
 
 /* Responsive */
 
-@media all and (max-width:1440px){
-    
-}
-@media all and (max-width:1280px){
-
-}
+/* Responsive 1080px */
 @media all and (max-width:1080px){
     #home #main header .header-cont{
         background-color: transparent;  
@@ -771,7 +818,7 @@ body{
     
 }
 
-
+/* Responsive 980px */
 @media all and (max-width:980px){
     #home #main header .header-responsive .wrapper{
         width: 80%;
@@ -875,7 +922,7 @@ body{
     }
 }
 
-
+/* Responsive 768px */
 @media all and (max-width:768px){
     #home #newin .wrapper .top{
         margin: 0px 20px;
@@ -888,7 +935,7 @@ body{
     }
 }
 
-
+/* Responsive 640px */
 @media all and (max-width:640px){
     #home #main{
         background: url('../images/responsive-banner.webp') center/cover no-repeat; 
@@ -944,23 +991,23 @@ body{
     #home footer .wrapper .top .items .itemhead h3{
         font-size: 15.4px;
     }
-   
 }
 
-
+/* Responsive 540px */
 @media all and (max-width:540px){
     #home #main{
         min-height: 950px;
     }
 }
 
-
+/* Responsive 480px */
 @media all and (max-width:480px){
     #home footer .wrapper .bottom .footerlist ul{
         height: 320px;  
     }
 }
 
+/* Responsive 360px */
 @media all and (max-width:360px){
     #home #main{
         min-height: 750px;
@@ -978,7 +1025,4 @@ body{
     #home #newin .wrapper .bottom ul li{
         min-height: 510px;
     }
-}
-@media all and (max-width:320px){
-
 }

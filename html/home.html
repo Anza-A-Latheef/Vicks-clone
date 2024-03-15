@@ -26,7 +26,7 @@
                         </h1>
                         <nav>
                             <div class="left">
-                                <ul>
+                                <ul >
                                     <li><a href="#" class="navheads" title="PRODUCTS">products</a></li>
                                     <li><a href="#" class="navheads" title="TREATMENT & TIPS">treatment & tips</a></li>
                                     <li><a href="#" class="navheads" title="FAQS">faqs</a></li>
@@ -43,7 +43,7 @@
                 <div class="header-responsive">
                     <section class="wrapper">
                         <div class="bar-icon">
-                            <button id="open-menu"><i class="fa fa-bars" title="HAMBURGER ICON"></i></button>
+                            <button  id="open-menu"><i class="fa fa-bars" title="HAMBURGER ICON"></i></button>
                         </div>
                         <h1 class="left">
                             <a href="#" title="Vicks - logo">
@@ -96,7 +96,7 @@
             </div>
             <section class="wrapper">
                 <section id="spotlight">
-                    <button><i class="fa fa-angle-down"></i></button>
+                    <button class="scroll-down"><i class="fa fa-angle-down"></i></button>
                     <a href="#">Learn more</a>
                 </section>
             </section>
@@ -123,6 +123,14 @@
                                     <h6>Immune Support</h6>
                                     <button>shop</button>
                                 </div>
+                                <!-- icons display on hover -->
+                                <div class="hover-element">
+                                    <div class="hover-container">
+                                            <button class="show"><i class="fa fa-search-plus" title="Visual search"></i></button>
+                                            <button><i class="fa fa-clone" title="Save to collections"></i></button>
+                                            <button><i class="fa fa-ellipsis-h" title="Settings"></i></button>
+                                    </div>
+                                </div>
                             </a>
                         </li>
                         <li class="bg-two" title="DAYQUIL & NYQUIL">
@@ -134,16 +142,30 @@
                                     <h6>Cold & Flu</h6>
                                     <button>shop</button>
                                 </div>
+                                <div class="hover-element">
+                                    <div class="hover-container">
+                                            <button class="show"><i class="fa fa-search-plus" title="Visual search"></i></button>
+                                            <button><i class="fa fa-clone" title="Save to collections"></i></button>
+                                            <button><i class="fa fa-ellipsis-h" title="Settings"></i></button>
+                                    </div>
+                                </div>
                             </a>
                         </li>
                         <li class="bg-three" title="SINEX">
-                            <a href="#" >
+                            <a href="#">
                                 <div class="container">
                                     <h3>Sinex
                                         <br/><span class="upper">saline</span>
                                     </h3>
                                     <h6>Sinus</h6>
                                     <button>shop</button>
+                                </div>
+                                <div class="hover-element">
+                                    <div class="hover-container">
+                                            <button class="show"><i class="fa fa-search-plus" title="Visual search"></i></button>
+                                            <button><i class="fa fa-clone" title="Save to collections"></i></button>
+                                            <button><i class="fa fa-ellipsis-h" title="Settings"></i></button>
+                                    </div>
                                 </div>
                             </a>
                         </li>
@@ -276,51 +298,49 @@
     </section>
     <!-- home ends -->
     <!-- script area starts-->
-        <script>
+    <script>
             //style changes on scroll
-            window.addEventListener('scroll', function() {
-    var header = document.querySelector('header');
-    var navLink = document.querySelectorAll('#home #main header .header-cont .wrapper nav .left ul li a');
-    var searchIcon = document.querySelector('#home #main header .header-cont .wrapper nav .right button i');
+        window.addEventListener('scroll', function() {
+            var header = document.querySelector('header');
+            var navLink = document.querySelectorAll('#home #main header .header-cont .wrapper nav .left ul li a');
+            var searchIcon = document.querySelector('#home #main header .header-cont .wrapper nav .right button i');
+            var searchicon=document.querySelector('#home #main header .header-responsive .wrapper .right button i');
+            var hamsberg=document.querySelector('#home #main header .header-responsive .wrapper .bar-icon button i');
 
-    // var searchicon=document.querySelector('#home #main header .header-responsive .wrapper .right button');
-    // var hamsberg=document.querySelector('#home #main header .header-responsive .wrapper .bar-icon button');
+            if (window.scrollY > 0) {
+                header.classList.add('scroll-background-white');
+                searchIcon.style.color = "#09357a";
+                searchicon.style.color="#09357a";
+                hamsberg.style.color="#09357a";
+                navLink.forEach(function(element) {
+                    element.classList.remove('navheads');
+                    element.classList.add('navhover');
+                    element.addEventListener('mouseenter', function() {
+                        searchIcon.style.color = "#09357a"; 
+                    });
+                    element.addEventListener('mouseleave', function() {
+                        searchIcon.style.color = "#ffffff"; 
+                    });
+                });
+            } else {
+                header.classList.remove('scroll-background-white');
+                searchIcon.style.color = "#ffffff"; 
+                searchicon.style.color="#ffffff";
+                hamsberg.style.color="#ffffff";
+                navLink.forEach(function(element) {
+                    element.classList.add('navheads');
+                    element.classList.remove('navhover');
+                    element.removeEventListener('mouseenter', function() {
+                        searchIcon.style.color = "#09357a"; 
+                    });
+                    element.removeEventListener('mouseleave', function() {
+                        searchIcon.style.color = "#ffffff"; 
+                    });
+                });
+            }
+        });
 
-    if (window.scrollY > 0) {
-        header.classList.add('scroll-background-white');
-        searchIcon.style.color = "#09357a";
-        // searchicon.style.color="#09357a";
-        // hamsberg.style.color="#09357a";
-        navLink.forEach(function(element) {
-            element.classList.remove('navheads');
-            element.classList.add('navhover');
-            element.addEventListener('mouseenter', function() {
-                searchIcon.style.color = "#09357a"; 
-            });
-            element.addEventListener('mouseleave', function() {
-                searchIcon.style.color = "#ffffff"; 
-            });
-        });
-    } else {
-        header.classList.remove('scroll-background-white');
-        searchIcon.style.color = "#ffffff"; 
-        // searchicon.style.color="#ffffff";
-        // hamsberg.style.color="#ffffff";
-        navLink.forEach(function(element) {
-            element.classList.add('navheads');
-            element.classList.remove('navhover');
-            element.removeEventListener('mouseenter', function() {
-                searchIcon.style.color = "#09357a"; 
-            });
-            element.removeEventListener('mouseleave', function() {
-                searchIcon.style.color = "#ffffff"; 
-            });
-        });
-    }
-});
-        
         //toggle footer on responsive point 980 
-
         document.addEventListener('DOMContentLoaded', function() {
         const itemheads = document.querySelectorAll('.itemhead');
             itemheads.forEach(itemhead => {
@@ -331,9 +351,28 @@
         });
 
         //open menu on responsive
-        const toggleButton =document.getElementById('open-menu')
+        document.addEventListener('DOMContentLoaded', function() {
+            const openmenu = document.getElementById('open-menu');
+            const content = document.getElementById('responsive-menu');
+            const closeBtn = document.getElementById('close-menu');
 
-        </script>
+            openmenu.addEventListener('click', function() {
+                content.style.display = "flex";
+            });
+            
+            closeBtn.addEventListener("click", function() {
+                content.style.display = "none";
+            });
+        });
+        //scroll down event
+            document.addEventListener("DOMContentLoaded", function() {
+                var scrollButton = document.querySelector('.scroll-down');
+                scrollButton.addEventListener('click', function() {
+                    var nextSection = document.getElementById("newin");
+                    nextSection.scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+    </script>
     <!-- script area ends -->
 </body>
 </html>
