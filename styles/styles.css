@@ -20,7 +20,8 @@ body{
 }
 .wrapper{
     margin: 0 auto;
-    max-width: 1232px;
+    max-width: 1280px;
+    width: 90%;
 }
 /* Background color of header and color of nav-tags changes on scrolling*/
 .scroll-background {
@@ -142,10 +143,10 @@ body{
     z-index: 12;
     background-color: transparent;  
     display: none; 
+    padding: 7px 0px;
 }
 #home #main header .header-responsive .wrapper{
     display: flex;
-    width: 90%;
     align-items: center;
     justify-content: space-between;
 }
@@ -201,7 +202,6 @@ body{
     }
     #home #main #responsive-menu header .header-responsive .wrapper{
         display: flex;
-        width: 90%;
         align-items: center;
         justify-content: space-between;
     }
@@ -309,7 +309,7 @@ body{
 /* main section styling ends */
 /* newsin section styling starts */
 #home #newin {
-    margin: 100px auto;
+    padding: 100px 0px;
 }
 #home #newin .wrapper .top{
     display: flex;
@@ -340,19 +340,57 @@ body{
 }
 #home #newin .wrapper .bottom{
     margin-top: 10px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+#home #newin .wrapper .bottom  button.left-scroll,
+#home #newin .wrapper .bottom button.right-scroll
+{
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    color: #09357a;
+    top: 40%;
+    position: absolute;
+    background: #ffffff;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    padding: 20px;
+    z-index: 1;
+    border: none;
+    align-items: center;
+    opacity: 0.9;
+    box-shadow: 0 5px 15px #00000033;
+    cursor: pointer;
+}
+#home #newin .wrapper .bottom button.left-scroll{
+    left: -30px;
+}
+#home #newin .wrapper .bottom button.right-scroll{
+    right: -30px;
 }
 #home #newin .wrapper .bottom ul{
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 20px;
+    transition: transform 0.5s ease-in-out;
 }
 #home #newin .wrapper .bottom ul li{
+    flex: 0 0 auto;
     height: 570px;
     width: 32.5%;
     border-radius: 5px;
     cursor: pointer;
     transition: transform .3s;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
 }
 #home #newin .wrapper .bottom ul li:hover{
     transform: scale(1.01);
@@ -363,21 +401,21 @@ body{
 
 #home #newin .wrapper .bottom ul li.bg-one{
     background-image: url(../images/NewIn-1.avif);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 #home #newin .wrapper .bottom ul li.bg-two{
     background-image: url(../images/04_NewIn-2.avif);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 #home #newin .wrapper .bottom ul li.bg-three{
     background-image: url(../images/NewIn-3.avif);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+}
+#home #newin .wrapper .bottom ul li.bg-four{
+    background-image: url(../images/14_YourVicks-4.avif);
+}
+#home #newin .wrapper .bottom ul li.bg-five{
+    background-image: url(../images/13_YourVicks-3.avif);
+}
+#home #newin .wrapper .bottom ul li.bg-six{
+    background-image: url(../images/12_YourVicks-2.avif);
 }
 #home #newin .wrapper .bottom ul li a{
     width: 100%;
@@ -476,6 +514,136 @@ body{
    color: #264d89;
 }
 /* newsin section styles end */
+/* find vicks section styles starts here */
+#home #findvicks{
+    padding-bottom: 90px;
+}
+#home #findvicks .wrapper .findvickscontainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#home #findvicks .wrapper .findvickscontainer .top{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+#home #findvicks .wrapper .findvickscontainer .top h2{
+    line-height: 20px;
+    font-size: 26px;
+    color: #09357a;
+    font-family: sans-serif;
+    font-weight: lighter;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+#home #findvicks .wrapper .findvickscontainer .top h2 span{
+    font-size: 27px;
+    font-family: IntroW03;
+}
+#home #findvicks .wrapper .findvickscontainer .top .searchtab input{
+    outline: none;
+    width: 300px;
+    font-size: 20px;
+    padding: 10px;
+    border: 2px solid #09357a;
+    box-shadow: 0 5px 15px #00000033;
+}
+#home #findvicks .wrapper .findvickscontainer .bottom{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0px;
+}
+#home #findvicks .wrapper .findvickscontainer .bottom .slidesection{
+    display: flex;
+    width: 100%;
+    position: relative;
+    overflow-x: hidden;
+}
+#home #findvicks .wrapper .findvickscontainer .bottom .slidesection button.left,
+#home #findvicks .wrapper .findvickscontainer .bottom .slidesection button.right
+{
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    color: #09357a;
+    top: 40%;
+    position: absolute;
+    background: #ffffff;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    padding: 20px;
+    z-index: 1;
+    border: none;
+    align-items: center;
+    opacity: 0.9;
+    cursor: pointer;
+    box-shadow: 0 5px 15px #00000033;
+}
+#home #findvicks .wrapper .findvickscontainer .bottom .slidesection button.left{
+    left: -30px;
+} 
+#home #findvicks .wrapper .findvickscontainer .bottom .slidesection button.right{
+    right: -30px;
+}
+#home #findvicks .wrapper .findvickscontainer .bottom .slidesection ul{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 25px;
+    transition: transform 0.5s ease-in-out;
+}
+#home #findvicks .wrapper .findvickscontainer .bottom .slidesection ul li{
+    flex: 0 0 auto;
+    width: 24%;
+}
+#home #findvicks .wrapper .findvickscontainer .bottom .slidesection ul li button.cardbutton{
+    cursor: pointer;
+    width: 100%;    
+    border: none;
+}
+#home #findvicks .wrapper .findvickscontainer .bottom .slidesection ul li button.cardbutton .card-img{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+#home #findvicks .wrapper .findvickscontainer .bottom .slidesection ul li button.cardbutton .card-img img{
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+}
+#home #findvicks .wrapper .findvickscontainer .bottom .slidesection ul li button.cardbutton .cardcont{
+    position: absolute;
+    top: 0;
+    padding: 30px;    
+}
+#home #findvicks .wrapper .findvickscontainer .bottom .slidesection ul li button.cardbutton .cardcont h3{
+    color: #ffffff;
+    font-size: 27px;
+    line-height: 20px;
+    font-family: IntroW03;
+}
+#home #findvicks .wrapper .findvickscontainer .bottom .endlink{
+    width: 100%;
+    padding: 35px 0px;
+}
+#home #findvicks .wrapper .findvickscontainer .bottom .endlink a{
+    line-height: 20px;
+    font-size: 16px;
+    color: #09357a;
+    font-family: sans-serif;
+    font-weight: lighter;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+#home #findvicks .wrapper .findvickscontainer .bottom .endlink i{
+margin: 0px 6px;
+}
+/* find vicks section styles ends here */
 /* footer style starts */
 #home footer{
     background-color: #09357a;
@@ -738,6 +906,41 @@ body{
     line-height: 20px;
     font-size: 14px;
 }
+/* Your custom CSS styles */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    position: relative;
+}
+
+.popup-content .close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+}
+
+.popup-content img {
+    max-width: 100%;
+    max-height: 80vh;
+}
+
 
 /* footer style ends */
 /* styling ends */
@@ -777,7 +980,7 @@ body{
         width: 27.3%;
         border-radius: 7px;
     }    
-    #home footer .wrapper{
+    #home footer{
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -820,9 +1023,6 @@ body{
 
 /* Responsive 980px */
 @media all and (max-width:980px){
-    #home #main header .header-responsive .wrapper{
-        width: 80%;
-    }
     #home #newin .wrapper .top{
         margin: 0px 125px;
     }
