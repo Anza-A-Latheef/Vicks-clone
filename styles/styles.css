@@ -343,29 +343,27 @@ body{
     display: flex;
     align-items: center;
     position: relative;
-    overflow-x: hidden;
-    overflow-y: hidden;
 }
 #home #newin .wrapper .bottom  button.left-scroll,
-#home #newin .wrapper .bottom button.right-scroll
+#home #newin .wrapper .bottom  button.right-scroll
 {
-    font-size: 30px;
-    display: flex;
-    justify-content: center;
-    color: #09357a;
-    top: 40%;
     position: absolute;
-    background: #ffffff;
-    border-radius: 50%;
+    top: 40%;
     width: 60px;
     height: 60px;
     padding: 20px;
-    z-index: 1;
-    border: none;
-    align-items: center;
+    background: #ffffff;
     opacity: 0.9;
+    border: none;
+    border-radius: 50%;
     box-shadow: 0 5px 15px #00000033;
+    z-index: 1;
     cursor: pointer;
+    font-size: 30px;
+    color: #09357a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #home #newin .wrapper .bottom button.left-scroll{
     left: -30px;
@@ -377,13 +375,15 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
+    gap: 40px;
     transition: transform 0.5s ease-in-out;
+    overflow: scroll;
+    overflow: hidden;
+    scroll-behavior: smooth;
 }
 #home #newin .wrapper .bottom ul li{
-    flex: 0 0 auto;
     height: 570px;
-    width: 32.5%;
+    min-width: 31%;
     border-radius: 5px;
     cursor: pointer;
     transition: transform .3s;
@@ -395,7 +395,7 @@ body{
 #home #newin .wrapper .bottom ul li:hover{
     transform: scale(1.01);
 }
-#home #newin .wrapper .bottom ul li a:hover .hover-element .hover-container .show{
+#home #newin .wrapper .bottom ul li:hover .hover-element .hover-container .show{
     display: flex;
 }
 
@@ -469,24 +469,24 @@ body{
     background-color: #09357a;
     color: #ffffff;
 }
-#home #newin .wrapper .bottom ul li a .container.active h3{
+#home #newin .wrapper .bottom ul li.active a .container h3{
     color: #ffffff;
 }
-#home #newin .wrapper .bottom ul li a .container.active h6{
+#home #newin .wrapper .bottom ul li.active a .container h6{
     color: #ffffff;
 }
-#home #newin .wrapper .bottom ul li a .container.active button{
+#home #newin .wrapper .bottom ul li.active a .container button{
     color: #ffffff;
     border: 2px solid #ffffff;
 }
-#home #newin .wrapper .bottom ul li a .container.active button:hover{
+#home #newin .wrapper .bottom ul li.active a .container button:hover{
     color: #09357a;
     background-color: #ffffff;
     border: 2px solid #ffffff;
 }
 #home #newin .wrapper .bottom ul li a .hover-element{
-    width: fit-content;
-    height: min-content;
+    width: 50px;
+    height: 50px;
     margin: 10px;
 }
 #home #newin .wrapper .bottom ul li a .hover-element .hover-container{
@@ -561,28 +561,26 @@ body{
     display: flex;
     width: 100%;
     position: relative;
-    overflow-x: hidden;
 }
 #home #findvicks .wrapper .findvickscontainer .bottom .slidesection button.left,
-#home #findvicks .wrapper .findvickscontainer .bottom .slidesection button.right
-{
-    font-size: 30px;
+#home #findvicks .wrapper .findvickscontainer .bottom .slidesection button.right{
     display: flex;
     justify-content: center;
-    color: #09357a;
-    top: 40%;
+    align-items: center;
     position: absolute;
+    top: 40%;
     background: #ffffff;
+    opacity: 0.9;
+    box-shadow: 0 5px 15px #00000033;
+    border: none;
     border-radius: 50%;
     width: 60px;
     height: 60px;
     padding: 20px;
-    z-index: 1;
-    border: none;
-    align-items: center;
-    opacity: 0.9;
     cursor: pointer;
-    box-shadow: 0 5px 15px #00000033;
+    z-index: 1;
+    font-size: 30px;
+    color: #09357a;
 }
 #home #findvicks .wrapper .findvickscontainer .bottom .slidesection button.left{
     left: -30px;
@@ -593,13 +591,20 @@ body{
 #home #findvicks .wrapper .findvickscontainer .bottom .slidesection ul{
     display: flex;
     width: 100%;
-    align-items: center;
     gap: 25px;
     transition: transform 0.5s ease-in-out;
+    overflow: scroll;
+    overflow: hidden;
+    scroll-behavior: smooth;
 }
 #home #findvicks .wrapper .findvickscontainer .bottom .slidesection ul li{
-    flex: 0 0 auto;
-    width: 24%;
+    transition: transform .3s;
+    min-width: 24%;
+    max-width: 24%;
+    position: relative;
+}
+#home #findvicks .wrapper .findvickscontainer .bottom .slidesection ul li:hover{
+    transform: scale(1.01);
 }
 #home #findvicks .wrapper .findvickscontainer .bottom .slidesection ul li button.cardbutton{
     cursor: pointer;
@@ -609,7 +614,6 @@ body{
 #home #findvicks .wrapper .findvickscontainer .bottom .slidesection ul li button.cardbutton .card-img{
     width: 100%;
     height: 100%;
-    position: relative;
 }
 #home #findvicks .wrapper .findvickscontainer .bottom .slidesection ul li button.cardbutton .card-img img{
     border-radius: 5px;
@@ -921,26 +925,38 @@ margin: 0px 6px;
 }
 
 .popup-content {
-    background-color: white;
+    background-color: transparent;
     padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    text-align: center;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    align-items:flex-end;
+    justify-content: center;
 }
-
-.popup-content .close {
+.popup-content h3{
+    color: #ffffff;
+    font-family: IntroW03;
+    font-size: 30px;
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: 80px;
+    left: 40px;
+}
+.popup-content .close {
+    margin: 10px;
     cursor: pointer;
 }
-
-.popup-content img {
-    max-width: 100%;
-    max-height: 80vh;
+.popup-content .close i{
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 100;
 }
-
+.popup-content img {
+    border-radius: 5px;
+    border: 1px solid #ffffff;
+    max-width: 100%;
+    max-height: 75vh;
+}
 
 /* footer style ends */
 /* styling ends */
@@ -972,12 +988,10 @@ margin: 0px 6px;
     }
     #home #newin .wrapper .bottom ul{
         gap: 25px;
-        justify-content: center;
-        width: 100%;
     }
     #home #newin .wrapper .bottom ul li{
         height: 410px;
-        width: 27.3%;
+        min-width: 34%;
         border-radius: 7px;
     }    
     #home footer{
@@ -1018,7 +1032,9 @@ margin: 0px 6px;
         font-size: 17px;
         text-wrap:wrap;
     }
-    
+    #home #findvicks .wrapper .findvickscontainer .bottom .slidesection ul li{
+        min-width: 23%;
+    }
 }
 
 /* Responsive 980px */
@@ -1031,7 +1047,7 @@ margin: 0px 6px;
     }
     #home #newin .wrapper .bottom ul li{
         height: 370px;
-        width: 24%;
+        width: 45%;
         border-radius: 7px;
     }
     #home #newin .wrapper .bottom ul li a .container h3{
@@ -1039,6 +1055,28 @@ margin: 0px 6px;
     }
     #home #newin .wrapper .bottom ul li a .container h3 span.upper{
         font-size: 20px;
+    }
+    #home #findvicks .wrapper .findvickscontainer .top h2{
+        font-size: 23px;
+    }
+    #home #findvicks .wrapper .findvickscontainer .top h2 span{
+        font-size: 23px;
+    }
+    #home #findvicks .wrapper .findvickscontainer .top .searchtab input{
+        width: 300px;
+        padding: 5px;
+    }
+    #home #findvicks .wrapper .findvickscontainer .bottom .slidesection ul li button.cardbutton .cardcont{
+        padding: 20px;    
+    }
+    #home #findvicks .wrapper .findvickscontainer .bottom .slidesection .right{
+        display: none;
+    }
+    #home #findvicks .wrapper .findvickscontainer .bottom .slidesection ul{
+        gap: 10px;
+    }
+    #home #findvicks .wrapper .findvickscontainer .bottom .slidesection ul li{
+        min-width: 23%;
     }
     #home footer .wrapper .top{
         display: flex;
@@ -1131,7 +1169,16 @@ margin: 0px 6px;
         width: 94%;
     }
     #home #newin .wrapper .bottom ul li{
-        width: 31%;
+        min-width: 37%;
+    }
+    #home #findvicks .wrapper .findvickscontainer .bottom .slidesection ul li button.cardbutton .cardcont{
+        padding: 10px;    
+    }
+    #home #findvicks .wrapper .findvickscontainer .bottom .slidesection ul li button.cardbutton .cardcont h3{
+        font-size: 20px;
+    }
+    #home #findvicks .wrapper .findvickscontainer .bottom .slidesection ul li{
+        min-width: 22%;
     }
 }
 
@@ -1168,6 +1215,30 @@ margin: 0px 6px;
         font-size: 25px;
         font-family: IntroW03;
     }
+    #home #newin .wrapper .bottom button.left-scroll,
+    #home #newin .wrapper .bottom button.right-scroll{
+        display: none !important;
+    }
+    #home #findvicks .wrapper .findvickscontainer .bottom .slidesection ul li{
+        min-width: 27%;
+    }
+    #home #findvicks .wrapper .findvickscontainer .bottom .slidesection button.left,
+    #home #findvicks .wrapper .findvickscontainer .bottom .slidesection button.right{
+        display: none !important;
+    }
+    #home #findvicks .wrapper .findvickscontainer .bottom .slidesection ul{
+        overflow: auto;
+    }
+    #home #findvicks .wrapper .findvickscontainer .top h2{
+        font-size: 21px;
+    }
+    #home #findvicks .wrapper .findvickscontainer .top h2 span{
+        font-size: 21px;
+    }
+    #home #findvicks .wrapper .findvickscontainer .top .searchtab input{
+        width: 250px;
+        padding: 5px;
+    }
     #home #newin .wrapper .bottom ul{
         display: flex;
         flex-direction: column;
@@ -1198,6 +1269,17 @@ margin: 0px 6px;
     #home #main{
         min-height: 950px;
     }
+    #home #findvicks .wrapper .findvickscontainer .top h2{
+        font-size: 20px;
+    }
+    #home #findvicks .wrapper .findvickscontainer .top h2 span{
+        font-size: 20px;
+    }
+    #home #findvicks .wrapper .findvickscontainer .top .searchtab input{
+        width: 210px;
+        padding: 5px;
+        font-size: 18px;
+    }
 }
 
 /* Responsive 480px */
@@ -1224,5 +1306,30 @@ margin: 0px 6px;
     }
     #home #newin .wrapper .bottom ul li{
         min-height: 510px;
+    }
+    #home #findvicks .wrapper .findvickscontainer .bottom .slidesection ul li{
+        min-width: 50%;
+    }
+    #home #findvicks .wrapper .findvickscontainer .top h2{
+        font-size: 15px;
+        line-height: 18px;
+    }
+    #home #findvicks .wrapper .findvickscontainer .top h2 span{
+        font-size: 15px;
+    }
+    #home #findvicks .wrapper .findvickscontainer .top .searchtab input{
+        width: 180px;
+        padding: 5px;
+        font-size: 16px;
+
+    }
+}
+@media all and (max-width:320px){
+    #home #main header{
+        width: 320px;
+    }
+    #home #main header .header-responsive .wrapper h1{
+        width: 50px;
+        height: 50px;
     }
 }
